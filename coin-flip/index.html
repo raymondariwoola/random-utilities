@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Coin Flip Game</h1>
+        
+        <!-- Player Input Section -->
+        <div id="setup-section" class="section">
+            <div class="player-inputs">
+                <div class="input-group">
+                    <label for="player1">Player 1 Name:</label>
+                    <input type="text" id="player1" placeholder="Enter Player 1 name" required>
+                </div>
+                <div class="input-group">
+                    <label for="player2">Player 2 Name:</label>
+                    <input type="text" id="player2" placeholder="Enter Player 2 name" required>
+                </div>
+            </div>
+            <button id="start-game" class="btn-primary">Start Game</button>
+        </div>
+
+        <!-- Game Section -->
+        <div id="game-section" class="section hidden">
+            <div class="player-info">
+                <div class="player">
+                    <h3 id="player1-display"></h3>
+                    <p>Choice: <span id="player1-choice"></span></p>
+                </div>
+                <div class="player">
+                    <h3 id="player2-display"></h3>
+                    <p>Choice: <span id="player2-choice"></span></p>
+                </div>
+            </div>
+
+            <div id="coin-container">
+                <div id="coin" class="coin">
+                    <div class="coin-face coin-heads"></div>
+                    <div class="coin-face coin-tails"></div>
+                </div>
+            </div>
+
+            <div id="result-message" class="result-message"></div>
+            
+            <button id="flip-btn" class="btn-primary">Flip Coin</button>
+            <button id="reset-btn" class="btn-secondary">New Game</button>
+        </div>
+    </div>
+
+    <!-- Modal for coin side selection -->
+    <div id="choice-modal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Your Side</h2>
+            <p id="current-player-text"></p>
+            <div class="choice-buttons">
+                <button class="choice-btn" data-choice="heads">
+                    <div class="choice-coin heads-choice"></div>
+                    <span>Heads</span>
+                </button>
+                <button class="choice-btn" data-choice="tails">
+                    <div class="choice-coin tails-choice"></div>
+                    <span>Tails</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
